@@ -5,18 +5,26 @@
     <title>魔法图书馆</title>
 
     <link rel="stylesheet" th:href="@{/css/index.css}">
-</head>
-<body>
-    <div class="container" id="root">
-        <div class="container" id="aside">
-            <div id="search-box">
-                <input type="text" id="search-input" />
-            </div>
-            <div id="article-container">
+    <link rel="stylesheet" th:href="@{/css/font.css}">
+    <link rel="stylesheet" th:href="@{/css/themes/github.css}">
 
+    <script th:src="@{/js/font.js}"></script>
+    <script th:src="@{/js/drag.js}"></script>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body class="Box HolyGrail">
+<div class="HolyGrail-body">
+    <aside class="HolyGrail-ads">
+        <div class="Box Articles">
+            <div class="ArticleItem" th:data-id="${item.id}" th:data-title="${item.title}" th:data-content="${item.content}" th:each="item,iterStat:${articles}" th:id="${item.id}" draggable="true" ondragstart="drag(event)">
+                <h1 th:text="${item.title}"></h1>
+                <p th:text="${item.content}"></p>
             </div>
         </div>
-        <div class="container" id="main"></div>
-    </div>
+    </aside>
+    <main class="HolyGrail-content">
+        <div class="ArticleViewBox" id="ArticleViewBox" ondrop="javascript:drop(event)" ondragover="javascript:allowDrop(event)"></div>
+    </main>
+</div>
 </body>
 </html>

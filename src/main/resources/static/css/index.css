@@ -1,4 +1,46 @@
-.container {
-    display: -webkit-flex;
+.HolyGrail {
+    margin: 0;
+    padding: 0;
     display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.HolyGrail-body {
+    display: flex;
+    flex: 1;
+}
+
+.HolyGrail-content {
+    display: flex;
+    flex: 1;
+}
+
+.HolyGrail-ads {
+    display: flex;
+    flex: 1;
+    border-right: 1px solid #eee;
+    max-height: calc(100vh);
+    overflow-y: scroll;
+}
+
+.Articles {
+    display: flex;
+    flex: 1;
+}
+
+.ArticleItem {
+    border-bottom: 1px dashed #eee;
+    transition: box-shadow 500ms;
+    -webkit-transition: box-shadow 500ms; /* Safari */
+    padding: 5px;
+}
+
+.ArticleItem:hover {
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+.ArticleViewBox {
+    width: 100%;
+    height: 100vh;
 }
